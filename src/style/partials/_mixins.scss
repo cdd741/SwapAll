@@ -1,0 +1,30 @@
+@use './variables' as *;
+
+@mixin H2 {
+  font-size: $H2;
+  line-height: $H2-LH;
+}
+
+@mixin H3 {
+  font-size: $H3;
+  line-height: $H3-LH;
+}
+
+@mixin H4 {
+  font-size: $H4;
+  line-height: $H4-LH;
+}
+
+@mixin H5 {
+  font-size: $H5;
+  line-height: $H5-LH;
+}
+
+@mixin H5-Footer {
+  font-size: $H5-Footer;
+  line-height: $H5-Footer-LH;
+}
+
+@mixin header-footer-padding {
+  padding: 0 $header-footer-padding;
+}

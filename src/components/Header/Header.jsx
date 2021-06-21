@@ -5,23 +5,13 @@ import logo from "../../assets/images/logo.png";
 function Header() {
   return (
     <div className="header">
-      <img src={logo} alt="Swap-All-Logo" />
+      <img className="header__logo" src={logo} alt="Swap-All-Logo" />
       <ul className="header__nav-links">
-        <a href="#" className="header__nav-link">
-          <li>Products</li>
-        </a>
-        <a href="#" className="header__nav-link">
-          <li>Developers</li>
-        </a>
-        <a href="#" className="header__nav-link">
-          <li>Governance</li>
-        </a>
-        <a href="#" className="header__nav-link">
-          <li>Community</li>
-        </a>
-        <a href="#" className="header__nav-link">
-          <li>Get Started</li>
-        </a>
+        <li className="header__nav-link pointer">Products</li>
+        <li className="header__nav-link pointer">Developers</li>
+        <li className="header__nav-link pointer">Governance</li>
+        <li className="header__nav-link pointer">Community</li>
+        <li className="header__nav-link pointer">Get Started</li>
       </ul>
     </div>
   );

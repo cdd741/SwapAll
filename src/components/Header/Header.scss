@@ -1,13 +1,28 @@
+@use '../../style/partials/mixins' as *;
+@use '../../style/partials/variables' as *;
+
+// since there's no interaction on the nav bar
+// I used curser: pointer as an indication
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
+  @include header-footer-padding;
+  padding-top: 51.19px;
+  padding-bottom: 81.43px;
+
+  &__logo {
+    height: 32px;
+    width: 156px;
+  }
 
   &__nav-links {
     display: flex;
   }
 
   &__nav-link {
-    text-decoration: none;
-    list-style-type: none;
+    color: $white;
+    @include H5;
+    margin-left: 24px;
   }
 }
