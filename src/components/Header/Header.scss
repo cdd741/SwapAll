@@ -1,0 +1,13 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  &__nav-links {
+    display: flex;
+  }
+
+  &__nav-link {
+    text-decoration: none;
+    list-style-type: none;
+  }
+}
