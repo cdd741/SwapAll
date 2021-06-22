@@ -14,4 +14,122 @@
   margin: auto;
   background-color: $white;
   border-radius: 24px;
+  padding: 65px 65px 76px 65px;
+  box-sizing: border-box;
+
+  &__title-container {
+    margin-bottom: 68px;
+  }
+
+  &__title {
+    font-weight: 300;
+  }
+
+  &__description {
+    font-weight: 400;
+    color: $light-grey;
+  }
+
+  &__swap-container {
+  }
+
+  &__swap {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__amount {
+    width: 100%;
+    margin-right: 18px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+
+    &--valid {
+      border-bottom: 2px solid $light-grey;
+    }
+
+    &--invalid {
+      border-bottom: 2px solid $orange;
+    }
+
+    &--zero {
+      color: $light-grey;
+    }
+  }
+
+  &__currency {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 27px;
+    padding: 16px;
+    height: 54px;
+    box-sizing: border-box;
+
+    &--selected {
+      box-shadow: 3px 3px 9px 1px rgba(65, 61, 69, 0.06);
+      min-width: 150px;
+    }
+
+    &--not-selected {
+      background-color: $blue;
+      color: $white;
+      width: 193px;
+    }
+  }
+
+  &__currency-wrapper {
+    display: flex;
+  }
+
+  &__currency-image {
+    height: 23px;
+    margin-right: 10px;
+  }
+
+  &__currency-arrow {
+    height: 11.5px;
+  }
+
+  &__currency-name {
+    font-weight: 500;
+    white-space: nowrap;
+    margin-right: 10px;
+  }
+
+  &__convert-arrow {
+    margin: 24.75px 0;
+    display: flex;
+    justify-content: center;
+    height: 12.5px;
+  }
+
+  &__balance {
+    color: $light-grey;
+    font-weight: 400;
+    margin-top: 8px;
+
+    &--invalid {
+      color: $orange;
+    }
+  }
+
+  &__currency-converter {
+    margin-top: 8px;
+    color: $light-grey;
+  }
+
+  &__swap-button {
+    margin-top: 94px;
+    height: 72px;
+    width: 100%;
+    background-color: $yello;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border: none;
+    border-radius: 36px;
+  }
 }
