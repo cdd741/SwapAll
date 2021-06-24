@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import "./App.scss";
 import "./style/common.scss";
 
@@ -21,7 +21,7 @@ function App({
 }) {
   useEffect(() => {
     setTokenList();
-  }, []);
+  }, [setTokenList]);
 
   const handleOnChange = (e) => {
     changeAmount(parseFloat(e.target.value));
