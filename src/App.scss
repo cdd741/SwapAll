@@ -34,9 +34,6 @@
     color: $light-grey;
   }
 
-  &__swap-container {
-  }
-
   &__swap {
     display: flex;
     justify-content: space-between;
@@ -114,10 +111,14 @@
     font-weight: bold;
     border: none;
     border-radius: 36px;
-    transition: 0.3s;
+    transition: 0.6s;
 
     &--invalid {
       opacity: 0.3;
+    }
+
+    &:hover {
+      background-color: $yello-hover;
     }
   }
 }

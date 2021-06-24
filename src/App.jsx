@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.scss";
 import "./style/common.scss";
 
@@ -46,30 +46,32 @@ function App({
       : 0;
 
   const convertedAmount =
-    convertTokenObj && currentTokenObj ? amount * conversionRate : 0;
+    convertTokenObj && currentTokenObj && amount
+      ? (amount * conversionRate).toFixed(4).toString()
+      : "0.00";
 
   let validInput = true;
   let validSwap = true;
-  let inputClass = "main__amount";
+  let inputClass = "main__amount main__amount--valid";
   let outputClass = "main__amount";
   let buttonClass = "main__swap-button pointer";
 
   if (!currentTokenObj && !convertTokenObj) {
     validInput = false;
-  } else if (!currentTokenObj || !convertTokenObj) {
-    validSwap = false;
-    buttonClass = "main__swap-button main__swap-button--invalid  pointer";
   } else if (!amount) {
     validSwap = false;
-    buttonClass = "main__swap-button main__swap-button--invalid  pointer";
+    buttonClass = "main__swap-button main__swap-button--invalid";
     inputClass = outputClass = "main__amount main__amount--zero";
-  } else if (amount > currentTokenObj.amount) {
+  } else if (amount > currentTokenObj.amount || amount < 0) {
     validSwap = false;
     validInput = false;
-    buttonClass = "main__swap-button main__swap-button--invalid  pointer";
+    buttonClass = "main__swap-button main__swap-button--invalid";
+  } else if (!currentTokenObj || !convertTokenObj) {
+    validSwap = false;
+    buttonClass = "main__swap-button main__swap-button--invalid";
   } else if (currentToken === convertToken) {
     validSwap = false;
-    buttonClass = "main__swap-button main__swap-button--invalid  pointer";
+    buttonClass = "main__swap-button main__swap-button--invalid";
   }
 
   return (
@@ -79,17 +81,20 @@ function App({
         <div className="main__title-container">
           <h2 className="main__title">Swap</h2>
           <h5 className="main__description">
-            The Slippage Tolerance is 10% by default.
+            The Slippage Tolerance is 10% by default
           </h5>
         </div>
         <div className="main__swap-container">
           <div className="main__swap">
             <input
-              className={inputClass}
+              className={`${inputClass} ${
+                validInput ? "main__amount--valid" : "main__amount--invalid"
+              }`}
               type="number"
               id="inputAmount"
               value={amount}
               onChange={handleOnChange}
+              placeholder="0.00"
             />
             <CurrentToken />
           </div>

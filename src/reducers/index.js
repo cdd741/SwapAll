@@ -10,13 +10,12 @@ export default function reducer(
   switch (action.type) {
     case "SET_TOKEN_LIST":
       const tokenList = action.payload.TOKEN_LIST;
-      console.log('SET_TOKEN_LIST triggered')
       return {
         ...state,
         tokenList: tokenList,
         currentToken: tokenList[0].token,
         convertToken: '',
-        amount: 0.00,
+        amount: '',
       };
     case "CHANGE_CURRENT_TOKEN":
       const currentTokenType = action.payload.CURRENT_TOKEN;
