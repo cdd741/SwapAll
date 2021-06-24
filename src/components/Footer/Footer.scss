@@ -8,11 +8,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
+  // position: absolute;
+  // bottom: 0;
+  position: relative;
   bottom: 0;
   width: 100%;
   box-sizing: border-box;
   background-color: $dark-grey;
+
+  position: absolute;
+  bottom: 0;
 
   &__links-container {
     display: flex;

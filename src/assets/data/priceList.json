@@ -1,0 +1,27 @@
+[
+    {
+    "id": 1,
+    "token": "USDT",
+    "price": 1,
+    "unit": "USDT"
+    },
+    {
+    "id": 2,
+    "token": "SAP",
+    "price": 0.512341241243,
+    "unit": "USDT"
+    },
+    {
+    "id": 3,
+    "token": "SATO",
+    "price": 0.719278461927341,
+    "unit": "USDT"
+    },
+    {
+    "id": 4,
+    "token": "GPB",
+    "price": 0.0128937129846291884691284,
+    "unit": "USDT"
+    }
+]
+    

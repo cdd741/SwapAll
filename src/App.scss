@@ -3,9 +3,13 @@
 
 .App {
   background-image: url(./assets/images/background.png);
-  height: 100vh;
-
+  position: relative;
+  min-height: 100vh;
   background-size: cover;
+}
+
+.page-padding {
+  height: 100.38px;
 }
 
 .main {
@@ -44,6 +48,17 @@
     font-weight: 500;
     display: flex;
     align-items: center;
+    outline: none;
+    border: none;
+    font-family: inherit;
+    @include H3;
+    color: inherit;
+
+    &::-webkit-inner-spin-button {
+      /* display: none; <- Crashes Chrome on hover */
+      -webkit-appearance: none;
+      margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    }
 
     &--valid {
       border-bottom: 2px solid $light-grey;
@@ -56,46 +71,6 @@
     &--zero {
       color: $light-grey;
     }
-  }
-
-  &__currency {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 27px;
-    padding: 16px;
-    height: 54px;
-    box-sizing: border-box;
-
-    &--selected {
-      box-shadow: 3px 3px 9px 1px rgba(65, 61, 69, 0.06);
-      min-width: 150px;
-    }
-
-    &--not-selected {
-      background-color: $blue;
-      color: $white;
-      width: 193px;
-    }
-  }
-
-  &__currency-wrapper {
-    display: flex;
-  }
-
-  &__currency-image {
-    height: 23px;
-    margin-right: 10px;
-  }
-
-  &__currency-arrow {
-    height: 11.5px;
-  }
-
-  &__currency-name {
-    font-weight: 500;
-    white-space: nowrap;
-    margin-right: 10px;
   }
 
   &__convert-arrow {
@@ -113,11 +88,19 @@
     &--invalid {
       color: $orange;
     }
+
+    &--placeholder {
+      height: 27px;
+    }
   }
 
   &__currency-converter {
     margin-top: 8px;
     color: $light-grey;
+
+    &--placeholder {
+      height: 27px;
+    }
   }
 
   &__swap-button {
@@ -131,5 +114,10 @@
     font-weight: bold;
     border: none;
     border-radius: 36px;
+    transition: 0.3s;
+
+    &--invalid {
+      opacity: 0.3;
+    }
   }
 }
