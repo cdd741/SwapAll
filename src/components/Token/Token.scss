@@ -3,8 +3,6 @@
 
 .token-and-dropdown {
   position: relative;
-  //   border-radius: 27px;
-  //   box-shadow: 3px 3px 9px 1px rgba(65, 61, 69, 0.06);
 }
 
 .token {
@@ -26,7 +24,6 @@
     box-shadow: 3px 3px 9px 1px rgba(65, 61, 69, 0.06);
     border-radius: 21px 21px 0 0;
     min-width: 157px;
-    // border-radius: none;
     border-bottom: 1px solid $hover-color;
   }
 
@@ -38,7 +35,6 @@
   &--not-selected {
     background-color: $blue;
     color: $white;
-    // width: 193px;
   }
 
   &__wrapper {
@@ -48,7 +44,6 @@
 
   &__image {
     width: 30px;
-    // height: 23px;
     margin-right: 10px;
   }
 
